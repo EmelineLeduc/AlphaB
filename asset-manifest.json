@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/AlphaB/static/css/main.8bfb3917.chunk.css",
+    "main.js": "/AlphaB/static/js/main.55334004.chunk.js",
+    "main.js.map": "/AlphaB/static/js/main.55334004.chunk.js.map",
+    "runtime-main.js": "/AlphaB/static/js/runtime-main.b807f7eb.js",
+    "runtime-main.js.map": "/AlphaB/static/js/runtime-main.b807f7eb.js.map",
+    "static/css/2.4fe4b06b.chunk.css": "/AlphaB/static/css/2.4fe4b06b.chunk.css",
+    "static/js/2.f2236934.chunk.js": "/AlphaB/static/js/2.f2236934.chunk.js",
+    "static/js/2.f2236934.chunk.js.map": "/AlphaB/static/js/2.f2236934.chunk.js.map",
+    "index.html": "/AlphaB/index.html",
+    "static/css/2.4fe4b06b.chunk.css.map": "/AlphaB/static/css/2.4fe4b06b.chunk.css.map",
+    "static/css/main.8bfb3917.chunk.css.map": "/AlphaB/static/css/main.8bfb3917.chunk.css.map",
+    "static/js/2.f2236934.chunk.js.LICENSE.txt": "/AlphaB/static/js/2.f2236934.chunk.js.LICENSE.txt",
+    "static/media/Contact.css": "/AlphaB/static/media/Raleway-Bold.d1a96e2a.ttf",
+    "static/media/alphaB.092442a1.png": "/AlphaB/static/media/alphaB.092442a1.png",
+    "static/media/design-contact.e5ca76bf.png": "/AlphaB/static/media/design-contact.e5ca76bf.png",
+    "static/media/design-contact2.1ecad8ca.png": "/AlphaB/static/media/design-contact2.1ecad8ca.png",
+    "static/media/home_center_left.c96aeb48.svg": "/AlphaB/static/media/home_center_left.c96aeb48.svg",
+    "static/media/home_center_left2.5d104b23.svg": "/AlphaB/static/media/home_center_left2.5d104b23.svg",
+    "static/media/home_center_right.0d165de9.svg": "/AlphaB/static/media/home_center_right.0d165de9.svg",
+    "static/media/home_center_right2.e1da861b.svg": "/AlphaB/static/media/home_center_right2.e1da861b.svg",
+    "static/media/home_top.25466ce2.svg": "/AlphaB/static/media/home_top.25466ce2.svg",
+    "static/media/iconSvg.e420ba26.svg": "/AlphaB/static/media/iconSvg.e420ba26.svg",
+    "static/media/img.db719dfd.png": "/AlphaB/static/media/img.db719dfd.png",
+    "static/media/quoteLeft.2c52b321.svg": "/AlphaB/static/media/quoteLeft.2c52b321.svg",
+    "static/media/quoteRight.3f4ddd81.svg": "/AlphaB/static/media/quoteRight.3f4ddd81.svg",
+    "static/media/svgError.634d8d0b.svg": "/AlphaB/static/media/svgError.634d8d0b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b807f7eb.js",
+    "static/css/2.4fe4b06b.chunk.css",
+    "static/js/2.f2236934.chunk.js",
+    "static/css/main.8bfb3917.chunk.css",
+    "static/js/main.55334004.chunk.js"
+  ]
+}
