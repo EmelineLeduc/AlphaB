@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import COLOR_OPTIONS from "./ColorOptions";
+import {
+  Avatar,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@material-ui/core";
 import useStyles from "./styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Avatar from "@material-ui/core/Avatar";
 
-export default function Voyelles(props) {
+export default function Vowels(props) {
   const classes = useStyles();
   const [colorValue, setColorValue] = React.useState("");
   const [open, setOpen] = React.useState(false);
@@ -31,7 +33,7 @@ export default function Voyelles(props) {
       }
     }
     console.log(newArea);
-    return props.textModifier(newArea);
+    return props.displayVowels(newArea);
   };
 
   const handleClose = () => {

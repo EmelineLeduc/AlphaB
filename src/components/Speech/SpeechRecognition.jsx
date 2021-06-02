@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/no-onchange */
 import React, { useState, useEffect } from "react";
@@ -58,8 +59,8 @@ function SpeechRecognition(props) {
       <form id="speech-recognition-form">
         {!supported && (
           <p>
-            Quelle dommage il semble que vous ne puissiez utilisez cette
-            fonctionnalitée
+            Quel dommage, il semble que vous ne puissiez utiliser cette
+            fonctionnalité.
           </p>
         )}
         {supported && (
@@ -80,10 +81,7 @@ function SpeechRecognition(props) {
             <div
               style={{ height: 105, display: "flex", justifyContent: "center" }}
             >
-              <p>
-                Selectionner votre langue afin de permettre une meilleur
-                retranscription de vos mots.
-              </p>
+              <p>Sélectionner votre langue pour la retranscription écrite.</p>
             </div>
             <Button
               variant="contained"
@@ -96,7 +94,7 @@ function SpeechRecognition(props) {
 
             {blocked && (
               <p style={erreurMic}>
-                Le micro est bloqué sur ce navigateur verifiez vos parametres
+                Le micro est bloqué sur ce navigateur, vérifiez vos paramètres.
               </p>
             )}
           </React.Fragment>

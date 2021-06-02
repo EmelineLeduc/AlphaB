@@ -33,8 +33,8 @@ function SpeechSynthesis(props) {
       <form>
         {!supported && (
           <p>
-            Quelle dommage il semble que vous ne puissiez utilisez cette
-            fonctionnalitée.
+            Quel dommage, il semble que vous ne puissiez utiliser cette
+            fonctionnalité.
           </p>
         )}
         {supported && (

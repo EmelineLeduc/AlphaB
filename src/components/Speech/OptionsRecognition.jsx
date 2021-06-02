@@ -1,8 +1,9 @@
-import { useRef, useEffect, useState, useCallback } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useRef, useEffect, useState, useCallback } from "react";
 
 const useEventCallback = (fn, dependencies) => {
   const ref = useRef(() => {
-    throw new Error('Cannot call an event handler while rendering.');
+    throw new Error("Cannot call an event handler while rendering.");
   });
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const useEventCallback = (fn, dependencies) => {
       const fn = ref.current;
       return fn(args);
     },
-    [ref],
+    [ref]
   );
 };
 
@@ -28,15 +29,13 @@ const useSpeechRecognition = (props = {}) => {
     const transcript = Array.from(event.results)
       .map((result) => result[0])
       .map((result) => result.transcript)
-      .join('');
-
+      .join("");
     onResult(transcript);
   };
 
   const handleError = (event) => {
-    if (event.error === 'not-allowed') {
+    if (event.error === "not-allowed") {
       recognition.current.onend = () => {};
-
       setListening(false);
     }
     onError(event);
@@ -45,7 +44,13 @@ const useSpeechRecognition = (props = {}) => {
   const listen = useEventCallback(
     (args = {}) => {
       if (listening || !supported) return;
-      const { lang = '', interimResults = true, continuous = true, maxAlternatives = 1, grammars } = args;
+      const {
+        lang = "",
+        interimResults = true,
+        continuous = true,
+        maxAlternatives = 1,
+        grammars,
+      } = args;
       setListening(true);
       recognition.current.lang = lang;
       recognition.current.interimResults = interimResults;
@@ -61,7 +66,7 @@ const useSpeechRecognition = (props = {}) => {
       recognition.current.onend = () => recognition.current.start();
       recognition.current.start();
     },
-    [listening, supported, recognition],
+    [listening, supported, recognition]
   );
 
   const stop = useEventCallback(() => {
@@ -75,8 +80,9 @@ const useSpeechRecognition = (props = {}) => {
   }, [listening, supported, recognition, onEnd]);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (typeof window === "undefined") return;
+    window.SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
     if (window.SpeechRecognition) {
       setSupported(true);
       recognition.current = new window.SpeechRecognition();

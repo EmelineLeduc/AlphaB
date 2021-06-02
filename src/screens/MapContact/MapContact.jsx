@@ -15,7 +15,7 @@ import MarkerUser from "../../components/Map/Marker/MarkerUser.tsx";
 import MapStyle from "../../components/Map/MapStyle";
 import "./MapContact.css";
 
-const key = "AIzaSyAURsom7c-jmbNERN0wVqb4OzVten2Hy24"; // clef google map api
+const key = "AIzaSyClzfRZ5qM3CATcR0nkSKRbjmgQRZbUr-Y"; // clef google map api
 
 function CardMaps() {
   const [lat, setLat] = useState(null);
@@ -87,6 +87,7 @@ function CardMaps() {
       const resquest = await fetch(`${cors}${encodedEndpoint}`);
       const json = await resquest.json();
       const { results } = JSON.parse(json.contents);
+      console.log(results);
       setDataPlace(results);
       setDataCard(results);
       setDataRating(results);
@@ -152,7 +153,7 @@ function CardMaps() {
         <div id="map">
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: "AIzaSyAURsom7c-jmbNERN0wVqb4OzVten2Hy24",
+              key: key,
             }}
             center={center}
             zoom={12}

@@ -31,7 +31,6 @@ function CarouselOpinions() {
 
   useEffect(() => {
     const opinionFormDB = firebase.database().ref("opinionFormDB");
-
     opinionFormDB.on("value", (snapshot) => {
       console.log(snapshot.val());
       let previousOpinion = snapshot.val();
@@ -62,40 +61,41 @@ function CarouselOpinions() {
         loop={true}
         className="mySwiper"
       >
-        {results.map((result) => {
-          console.log(result.id);
-          return (
-            <SwiperSlide key={result.id} className="card-opinion">
-              <div className="card-content">
-                <div className="layer"></div>
+        {results &&
+          results.map((result) => {
+            console.log(result.id);
+            return (
+              <SwiperSlide key={result.id} className="card-opinion">
+                <div className="card-content">
+                  <div className="layer"></div>
 
-                <p>{result.message}</p>
+                  <p>{result.message}</p>
 
-                <div className="card-user">
-                  <div className="card-user-name">{`${
-                    result.firstname
-                  } ${result.lastname.charAt(0)}.`}</div>
-                  <div className="card-user-job">{result.job}</div>
+                  <div className="card-user">
+                    <div className="card-user-name">{`${
+                      result.firstname
+                    } ${result.lastname.charAt(0)}.`}</div>
+                    <div className="card-user-job">{result.job}</div>
+                  </div>
                 </div>
-              </div>
-              <Box
-                className={classes.rating}
-                id="rating"
-                component="fieldset"
-                mb={3}
-                borderColor="transparent"
-              >
-                <Typography component="legend"></Typography>
-                <Rating
-                  className={classes.star}
-                  name="read-only"
-                  value={result.rating}
-                  readOnly
-                />
-              </Box>
-            </SwiperSlide>
-          );
-        })}
+                <Box
+                  className={classes.rating}
+                  id="rating"
+                  component="fieldset"
+                  mb={3}
+                  borderColor="transparent"
+                >
+                  <Typography component="legend"></Typography>
+                  <Rating
+                    className={classes.star}
+                    name="read-only"
+                    value={result.rating}
+                    readOnly
+                  />
+                </Box>
+              </SwiperSlide>
+            );
+          })}
       </Swiper>
     </div>
   );

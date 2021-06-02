@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import Typography from '@material-ui/core/Typography';
+import React from "react";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  Typography,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -13,25 +15,25 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 120,
   },
   inputLabel: {
-    fontSize: '16px',
+    fontSize: "16px",
   },
   menuItem: {
-    fontSize: '16px',
+    fontSize: "16px",
   },
   select: {
-    fontSize: '16px',
+    fontSize: "16px",
   },
 }));
 
-export default function Police(props) {
+export default function FontFamily(props) {
   const classes = useStyles();
-  const [police, setPolice] = React.useState('');
+  const [fontFamily, setFontFamily] = React.useState("");
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
     // eslint-disable-next-line react/prop-types
-    props.onChangePolice(event.target.value);
-    setPolice(event.target.value);
+    props.onChangeFontFamily(event.target.value);
+    setFontFamily(event.target.value);
     console.log(event);
   };
 
@@ -47,8 +49,11 @@ export default function Police(props) {
     <div>
       <h4>Police</h4>
       <FormControl className={classes.formControl}>
-        <InputLabel className={classes.inputLabel} id="demo-controlled-open-select-label">
-          Selectionner{' '}
+        <InputLabel
+          className={classes.inputLabel}
+          id="demo-controlled-open-select-label"
+        >
+          Selectionner{" "}
         </InputLabel>
         <Select
           className={classes.select}
@@ -57,21 +62,32 @@ export default function Police(props) {
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
-          value={police}
-          onChange={handleChange}>
+          value={fontFamily}
+          onChange={handleChange}
+        >
           <MenuItem className={classes.menuItem} value="">
             <em>None</em>
           </MenuItem>
           <MenuItem value={'"Verdana", sans serif'}>
-            <Typography className={classes.menuItem} style={{ fontFamily: '"Verdana", sans serif' }}>
+            <Typography
+              className={classes.menuItem}
+              style={{ fontFamily: '"Verdana", sans serif' }}
+            >
               Police Verdana
             </Typography>
           </MenuItem>
           <MenuItem className={classes.menuItem} value={'"Tahoma", sans serif'}>
-            <Typography style={{ fontFamily: '"Tahoma", serif' }}>Police Tahoma</Typography>
+            <Typography style={{ fontFamily: '"Tahoma", serif' }}>
+              Police Tahoma
+            </Typography>
           </MenuItem>
-          <MenuItem className={classes.menuItem} value={'"Comic sans MS", sans serif'}>
-            <Typography style={{ fontFamily: '"Comic sans MS", sans serif' }}>Police Comic sans MS</Typography>
+          <MenuItem
+            className={classes.menuItem}
+            value={'"Comic sans MS", sans serif'}
+          >
+            <Typography style={{ fontFamily: '"Comic sans MS", sans serif' }}>
+              Police Comic sans MS
+            </Typography>
           </MenuItem>
         </Select>
       </FormControl>

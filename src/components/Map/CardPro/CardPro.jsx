@@ -56,7 +56,7 @@ export default function CardPro(props) {
 
   const comment = async () => {
     const cors = "https://api.allorigins.win/get?url=";
-    const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${place}&key=AIzaSyATaVEl_K2D9IcWPICwcog27_C1TsOQGr0`;
+    const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${place}&key=AIzaSyClzfRZ5qM3CATcR0nkSKRbjmgQRZbUr-Y`;
     const encodedEndpoint = encodeURIComponent(endpoint);
     try {
       const resquest = await fetch(`${cors}${encodedEndpoint}`);

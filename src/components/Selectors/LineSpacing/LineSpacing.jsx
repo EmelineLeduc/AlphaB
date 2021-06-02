@@ -1,9 +1,6 @@
 import React from "react";
+import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 import "./LineSpacing.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -22,23 +19,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Interlignage(props) {
+export default function LineSpacing(props) {
   const classes = useStyles();
   const [line, setLine] = React.useState("");
-  const [openSelectLine, setOpenSelectLine] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
-  const handleChangeLineClick = (event) => {
+  const handleChange = (event) => {
     setLine(event.target.value);
     // eslint-disable-next-line react/prop-types
     props.onChangeLine(event.target.value);
   };
 
-  const handleCloseSelectLine = () => {
-    setOpenSelectLine(false);
+  const handleClose = () => {
+    setOpen(false);
   };
 
-  const handleOpenSelectLine = () => {
-    setOpenSelectLine(true);
+  const handleOpen = () => {
+    setOpen(true);
   };
 
   return (
@@ -55,11 +52,11 @@ export default function Interlignage(props) {
           className={classes.select}
           labelId="controlled-open-select-label"
           id="controlled-open-select"
-          open={openSelectLine}
-          onClose={handleCloseSelectLine}
-          onOpen={handleOpenSelectLine}
+          open={open}
+          onClose={handleClose}
+          onOpen={handleOpen}
           value={line}
-          onChange={handleChangeLineClick}
+          onChange={handleChange}
         >
           <MenuItem className={classes.menuItem} value="">
             <em>None</em>

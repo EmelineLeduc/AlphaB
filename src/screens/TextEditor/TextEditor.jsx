@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useCallback, Fragment } from "react";
 import {
   Box,
@@ -76,53 +77,33 @@ const useStyles = makeStyles((theme) => ({
 function TextToSpeech() {
   const classes = useStyles();
   const [value, setValue] = useState();
-  const [modifiedValue, setModifiedValue] = useState([]); // creation d'un state array pour contenir le texte tranformer de voyelles.jsx
+  const [modifiedValue, setModifiedValue] = useState([]); // création d'un state array pour contenir le texte tranformer de ColorVowel.jsx
   const [currentFontFamily, setCurrentFontFamily] = useState("");
   const [currentSize, setCurrentSize] = useState("");
   const [currentLineHeight, setCurrentLineHeight] = useState(""); //useState pour modifier interlignage
   const [currentWordSpace, setCurrentWordSpace] = useState(""); //useState pour modifier inter-mot
   const [letterSpacing, setLetterSpacing] = useState("");
   const [colorText, setColorText] = useState("");
-  const [affichage, setAffichage] = useState(true);
-  const [selectWord, setSelectWord] = useState("");
-  const [isSelected, setIsSelected] = useState(false);
-  const [positionLeft, setPositionLeft] = useState("");
-  const [positionTop, setPositionTop] = useState("");
+  const [display, setDisplay] = useState(true);
 
   // Callback avec array vide permet de ne pas re rendre la déclaration d'une function
   const handleValueChange = useCallback((event) => {
     setValue(event.target.value);
     let test = event.target.value.length;
-    setAffichage(true);
+    setDisplay(true);
     console.log(test);
     // test > 0 ? setVoyelleVisible(false) : setVoyelleVisible(true);
   }, []);
 
-  const handleTextModifier = useCallback((newText) => {
+  const handleDisplayVowels = useCallback((newText) => {
     setModifiedValue(newText);
     console.log(newText);
-    setAffichage(false);
+    setDisplay(false);
   });
 
-  const handleColorModifier = useCallback((newColor) => {
+  const handleChangeColor = useCallback((newColor) => {
     setColorText(newColor);
   });
-
-  const handleMouseUp = (event) => {
-    setSelectWord(window.getSelection().toString().trim());
-    console.log(`Selected text: ${window.getSelection().toString().trim()}`);
-    console.log(selectWord);
-    if (selectWord) {
-      setIsSelected(true);
-      const x = event.pageX;
-      const y = event.pageY;
-      setPositionLeft(`${x - 20}px`);
-      setPositionTop(`${y - 50}px`);
-    } else {
-      setIsSelected(false);
-    }
-  };
-  console.log(isSelected);
 
   return (
     <>
@@ -151,8 +132,8 @@ function TextToSpeech() {
             setCurrentFontFamily(newFontFamily)
           }
         />
-        <Color colorModifier={handleColorModifier} />
-        <ColorVowel textModifier={handleTextModifier} value={value} />
+        <Color colorModifier={handleChangeColor} />
+        <ColorVowel displayVowels={handleDisplayVowels} value={value} />
       </div>
       <div className={classes.root}>
         <Box className={classes.containerWrapper}>
@@ -163,7 +144,6 @@ function TextToSpeech() {
             value={value}
             className={classes.input}
             onChange={handleValueChange}
-            onMouseUp={handleMouseUp}
             inputProps={{
               style: {
                 fontFamily: currentFontFamily,
@@ -179,26 +159,11 @@ function TextToSpeech() {
               },
             }}
           />
-          <button
-            className="button-select"
-            style={{
-              width: "20px",
-              height: "20px",
-              backgroundColor: "red",
-              zIndex: "10",
-              position: "absolute",
-              left: { positionLeft },
-              top: { positionTop },
-              display: isSelected ? "block" : "none",
-            }}
-          ></button>
-
-          {/* wordBreak: 'break-all'  = retour a la ligne du text automatique*/}
+          {/* wordBreak: 'break-all'  = retour à la ligne automatique du texte */}
           <div style={{ wordBreak: "break-all" }}>
             {/* utilisation d'une card car textarea ne supporte pas le html */}
             <Card className={classes.root2}>
               <CardContent>
-                {/* parcours mon tableau et affiche les lettres avec les span colorier */}
                 <Typography
                   style={{
                     fontFamily: currentFontFamily,
@@ -210,15 +175,14 @@ function TextToSpeech() {
                   }}
                   component="h6"
                 >
-                  {affichage ? (
+                  {display ? (
                     <Fragment>{value}</Fragment>
                   ) : (
                     modifiedValue.map((letter, index) => (
                       <Fragment key={index}>{letter}</Fragment>
                     ))
                   )}
-
-                  {/* parcours mon tableau et affiche les lettres avec les span colorier */}
+                  {/* parcours le tableau et affiche les lettres avec les span coloriés */}
                   {/*fragment = <> utilisé pour englober letter et mettre une key  */}
                 </Typography>
               </CardContent>

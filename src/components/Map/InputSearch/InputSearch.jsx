@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import usePlacesAutocomplete from "@atomap/use-places-autocomplete";
 import "./InputSearch.css";
 import Button from "react-bootstrap/Button";
-const key = "AIzaSyAURsom7c-jmbNERN0wVqb4OzVten2Hy24";
+const key = "AIzaSyClzfRZ5qM3CATcR0nkSKRbjmgQRZbUr-Y";
 
 export default function PredictionsOnInputChange(props) {
   const [selectedPrediction, setSelectedPrediction] = useState(null);

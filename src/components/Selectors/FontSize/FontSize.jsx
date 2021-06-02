@@ -1,9 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import React from "react";
+import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -11,22 +8,22 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 120,
   },
   inputLabel: {
-    fontSize: '16px',
+    fontSize: "16px",
   },
   menuItem: {
-    fontSize: '16px',
+    fontSize: "16px",
   },
   select: {
-    fontSize: '16px',
+    fontSize: "16px",
   },
 }));
 
 export default function FontSize(props) {
   const classes = useStyles();
-  const [fontSize, setFontSize] = React.useState('');
+  const [fontSize, setFontSize] = React.useState("");
   const [openSelectLine, setOpenSelectLine] = React.useState(false);
 
-  const handleChangeLineClick = (event) => {
+  const handleChange = (event) => {
     setFontSize(event.target.value);
     // eslint-disable-next-line react/prop-types
     props.onChangeFontSize(event.target.value);
@@ -44,7 +41,10 @@ export default function FontSize(props) {
     <div>
       <h4>Taille</h4>
       <FormControl className={classes.formControl}>
-        <InputLabel className={classes.inputLabel} id="controlled-open-select-label">
+        <InputLabel
+          className={classes.inputLabel}
+          id="controlled-open-select-label"
+        >
           Sélectionner
         </InputLabel>
         <Select
@@ -55,7 +55,8 @@ export default function FontSize(props) {
           onClose={handleCloseSelectLine}
           onOpen={handleOpenSelectLine}
           value={fontSize}
-          onChange={handleChangeLineClick}>
+          onChange={handleChange}
+        >
           <MenuItem className={classes.menuItem} value="">
             <em>None</em>
           </MenuItem>
