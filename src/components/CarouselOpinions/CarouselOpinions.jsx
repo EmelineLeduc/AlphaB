@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import firebase from "../../utils/firebaseConfig";
 import { Box, Typography } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
 import { makeStyles } from "@material-ui/core/styles";
@@ -30,12 +30,17 @@ function CarouselOpinions() {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/ratings")
-      .then((response) => response.data)
-      .then((data) => {
-        setResults(data);
-      });
+    const opinionFormDB = firebase.database().ref("opinionFormDB");
+
+    opinionFormDB.on("value", (snapshot) => {
+      console.log(snapshot.val());
+      let previousOpinion = snapshot.val();
+      let opinion = [];
+      for (let id in previousOpinion) {
+        opinion.push({ id, ...previousOpinion[id] });
+      }
+      setResults(opinion);
+    });
   }, []);
 
   console.log(results);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import firebase from "../../utils/firebaseConfig";
 import {
   Box,
   Button,
@@ -66,36 +66,26 @@ function OpinionForm() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const createOpinionForm = () => {
     if (firstname && lastname && message && rating) {
-      axios
-        .post("http://localhost:4000/ratings", {
-          firstname,
-          lastname,
-          job,
-          message,
-          rating,
-        })
-        .then(function (response) {
-          console.log(response.status);
-          setFirstname("");
-          setLastname("");
-          setJob("");
-          setMessage("");
-          setRating("");
-          handleClose();
-          //ajout modal de validation
-          if (response.status === 201) {
-            enqueueSnackbar("Votre message a bien été envoyé.", {
-              variant: "success",
-            });
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-          enqueueSnackbar("Une erreur est survenue.", { variant: "error" });
-        });
+      const opinionFormDB = firebase.database().ref("opinionFormDB");
+      const opinionForm = {
+        firstname,
+        lastname,
+        job,
+        message,
+        rating,
+      };
+      opinionFormDB.push(opinionForm);
+      setFirstname("");
+      setLastname("");
+      setJob("");
+      setMessage("");
+      setRating(0);
+      enqueueSnackbar("Votre message a bien été envoyé.", {
+        variant: "success",
+      });
+      handleClose();
     } else {
       failMessage();
     }
@@ -232,7 +222,7 @@ function OpinionForm() {
             <Button
               className={classes.buttonSubmit}
               variant="contained"
-              onClick={handleSubmit}
+              onClick={createOpinionForm}
             >
               Envoyer
             </Button>
