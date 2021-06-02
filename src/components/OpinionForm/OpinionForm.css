@@ -1,0 +1,15 @@
+.opinion-button {
+  background-color: white;
+}
+
+#form-dialog-title {
+  margin: 30px 0 20px 25px;
+  color: #40d4f3;
+  font-size: 30px;
+}
+
+.presentation-opinion {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0 0 30px 0;
+}

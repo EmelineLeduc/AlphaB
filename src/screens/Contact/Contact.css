@@ -1,0 +1,15 @@
+#design {
+  width: 50vw;
+  height: auto;
+  margin: 0;
+}
+
+.container-design {
+  background-color: #326dc9;
+}
+
+.title-contact {
+  text-align: center;
+  padding: 60px 0 30px;
+  font-size: 2em;
+}

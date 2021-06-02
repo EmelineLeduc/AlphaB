@@ -1,0 +1,26 @@
+#input-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+#input-adress {
+  width: 100%;
+}
+
+.btn-search {
+  padding: 2px;
+}
+
+.adress {
+  margin: 10px;
+  padding-top: 5%;
+}
+
+ul,
+li {
+  margin: 0;
+  text-align: start !important;
+  list-style: none;
+}

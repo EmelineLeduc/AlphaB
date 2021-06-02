@@ -1,0 +1,154 @@
+.footer-area {
+  background-color: rgba(14, 14, 14, 0.899);
+}
+
+.footer-top {
+  padding: 30px 0 30px;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.footer-logo {
+  max-width: 80%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+#title-logo {
+  color: white;
+  font-weight: bold;
+}
+
+.footer-container-links {
+  text-align: center;
+}
+
+.footer-container-links > ul > li > a {
+  padding-top: 10px;
+  color: white;
+}
+
+.footer-container-links {
+  margin-left: 30px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-title-link {
+  color: white;
+  text-decoration: underline;
+  margin: 0px;
+}
+
+.button-opinion {
+  margin-bottom: 10px;
+}
+
+.copyright-area {
+  border-top: 1px solid rgba(136, 134, 134, 0.66);
+}
+
+.copyright-left,
+.copyright-right {
+  color: white;
+  font-size: 18px;
+}
+
+.copyright-name {
+  padding: 3px;
+  color: #ff00ff;
+}
+
+.copyright-name:hover {
+  padding: 3px;
+  color: #ff9cfa;
+}
+
+.social-icons svg {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  line-height: 45px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.social-icons > a {
+  margin: 5px;
+  color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.footer-area .social-icons > a {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+
+.social-icons > a.facebook,
+a.twitter,
+a.google-plus,
+a.vine {
+  background-color: #3dbfea !important;
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.fa-twitter:before {
+  content: "\f099";
+}
+.fa-vine:before {
+  content: "\f1ca";
+}
+
+@media screen and (max-width: 766px) {
+  .footer-logo {
+    display: none;
+  }
+
+  .footer-container-logo p {
+    text-align: center;
+  }
+
+  .footer-container-links {
+    display: none;
+  }
+  .button-opinion {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}

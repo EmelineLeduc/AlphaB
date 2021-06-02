@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  margin: 0;
+  background-color: #326dc9;
+}
+
+/* Section 1 */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-left: 15%;
+}
+
+.home-container-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-title {
+  font-family: "Rasa";
+  font-size: 60px;
+  color: white;
+}
+
+.home-logo {
+  width: 65px;
+  height: 65px;
+}
+
+.home-sub-title {
+  text-align: center;
+  color: white;
+  font-family: "Raleway";
+  font-size: 30px;
+}
+
+.home-button-begin {
+  font-family: "Raleway";
+  font-size: 25px;
+  background-color: #40d4f3;
+  border-radius: 30px;
+  width: 180px;
+  height: 50px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  border: none;
+  box-shadow: 0 5px rgba(0, 0, 0, 0.495);
+}
+
+.home-button-begin:hover {
+  background-color: #d65ea6;
+}
+
+.home-button-begin:active {
+  background-color: #40d4f8;
+  box-shadow: 0 5px black;
+  transform: translateY(2px);
+}
+
+#button-link {
+  list-style: none;
+  color: white;
+}
+
+#home-button-begin-link:hover {
+  text-decoration: none;
+}
+
+.home-section1-image {
+  height: 90vh;
+}
+
+/* Section 2 */
+.home-main-container-quote {
+  height: auto;
+  width: 100%;
+  text-align: center;
+  background-color: #326dc9;
+  padding-top: 10%;
+}
+
+.home-container-quote {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  padding: 5;
+  margin: auto;
+}
+
+.home-container-quote-abdou {
+  padding-top: 50px;
+}
+
+.home-quotes-left {
+  position: relative;
+  margin-top: -120px;
+}
+
+.home-quotes {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 23px;
+  line-height: 41px;
+  color: #ffffff;
+}
+
+.home-quotes-right {
+  position: relative;
+  margin-bottom: -11%;
+}
+
+.home-quote {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  width: 45%;
+  margin: auto;
+}
+
+#quote {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 23px;
+  line-height: 41px;
+  color: #ffffff;
+}
+
+/* Section 3 */
+.home-text1,
+.home-text2,
+.home-text3 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 41px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.home-text2 {
+  padding-top: 10%;
+}
+
+#home-design-top {
+  width: 80vw;
+}
+
+#home-design-left-center {
+  width: 15vw;
+}
+
+#home-design-right-center {
+  width: 50vw;
+}
+
+#home-design-right2 {
+  display: none;
+}
+
+#home-design-left2 {
+  width: 40vw;
+}
+
+/* Section 4 */
+.home-text3 {
+  padding-top: 20%;
+}
+
+/* Section 5 */
+.quotesLeftAbdu {
+  position: relative;
+  margin-top: -100px;
+}
+
+.quotesRightAbdu {
+  position: relative;
+  margin-bottom: -10%;
+}
+
+#home-image-girl {
+  width: 80%;
+  height: 80%;
+  padding-top: 20%;
+  padding-right: 15%;
+}
+
+.conteneur4,
+.conteneur6 {
+  display: flex;
+  justify-content: flex-end;
+}
+.conteneur5 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  .home-quotes {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  #quote {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .home-section1 {
+    display: flex;
+    align-items: center;
+  }
+  .home-container {
+    margin: 0;
+    margin-top: 15%;
+    margin-bottom: 5%;
+  }
+
+  .home-title {
+    font-size: 50px;
+  }
+
+  .home-logo {
+    font-size: 50px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .home-sub-title {
+    font-size: 25px;
+  }
+
+  .home-button-begin {
+    width: 150px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .home-section1-image {
+    display: none;
+  }
+
+  .home-quote {
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-quotes {
+    margin-top: 10%;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  #quote {
+    font-size: 18px;
+  }
+
+  .home-quotes-right {
+    position: relative;
+    margin-top: 40%;
+  }
+
+  .home-text1,
+  .home-text2,
+  .home-text3 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .home-text1 {
+    margin: 60px;
+  }
+
+  .home-text2 {
+    margin: 10px 60px 60px 60px;
+  }
+
+  .home-text3 {
+    margin: 0px 60px 60px 60px;
+  }
+
+  #home-design-left2 {
+    display: none;
+  }
+}

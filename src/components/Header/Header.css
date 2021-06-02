@@ -1,0 +1,25 @@
+#logo {
+  width: 50px;
+  height: 50px;
+}
+
+.nav {
+  background-color: #326dc9;
+}
+
+.links {
+  display: inline-block;
+  position: relative;
+  margin: 0px 20px 0px;
+  color: white !important;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.links:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  font-weight: bold;
+}

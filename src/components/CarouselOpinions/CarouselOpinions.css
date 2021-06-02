@@ -1,0 +1,90 @@
+.opinion-container {
+  width: 100%;
+  height: auto;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  background-color: #326dc9;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.swiper-slide {
+  width: 10%;
+  height: 320px;
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+
+.mySwiper {
+  position: relative;
+  max-width: 100%;
+  -webkit-box-reflect: below 1px linear-gradient(transparent 70%, #0009);
+}
+
+.mySwiper .card-opinion {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(#326dc9, #03a9f4);
+  border-radius: 20px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.card-user-name {
+  padding-bottom: 0 !important;
+  font-size: 20px !important;
+}
+
+.card-user-job {
+  padding-bottom: 0 !important;
+}
+
+.card-content {
+  padding-top: 30px;
+}
+
+.mySwiper .card-opinion .layer {
+  position: absolute;
+  top: calc(110% - 2px);
+  width: 100%;
+  height: 100%;
+  background-color: #03a9f4;
+  z-index: 3;
+  transition: 0.5s;
+}
+
+.layer {
+  border-radius: 20px;
+}
+
+.mySwiper .card-opinion:hover .layer {
+  top: 0;
+  cursor: grab;
+}
+
+.card-content p,
+.card-user-name,
+.card-user-job,
+#rating {
+  position: relative;
+  z-index: 4;
+  padding: 10px 40px;
+  color: white;
+  font-family: "Raleway", Arial, serif;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1440px) {
+  .opinion-container {
+    display: none;
+  }
+}
